@@ -33,7 +33,7 @@ export default function Cart() {
       const newDiscount = validPromoCodes[promoCode];
       setIsPromoValid(true);
       setDiscount(newDiscount);
-      setAlertMessage(`You saved ₹${((subtotal*conversionRate) * newDiscount) / 100} in this order!!`);
+      setAlertMessage(`You saved ₹${(((subtotal*conversionRate) * newDiscount) / 100).toFixed(2)} in this order!!`);
     } else {
       setIsPromoValid(false);
       setDiscount(0);
@@ -66,9 +66,9 @@ export default function Cart() {
                   <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   {/* Convert item price from USD to INR */}
-                  <p>₹{item.price * conversionRate}</p>
+                  <p>₹{Math.trunc(item.price * conversionRate)}</p> 
                   <p>{cartitem[item._id]}</p>
-                  <p>₹{cartitem[item._id] * item.price * conversionRate}</p>
+                  <p>₹{(cartitem[item._id] * Math.trunc(item.price * conversionRate)).toFixed(2)}</p>
                   <p className="cross" onClick={() => removefromcart(item._id)}> X </p>
                 </div>
                 <hr />
@@ -84,7 +84,7 @@ export default function Cart() {
               <div className="cart-total-details">
                 <p>Subtotal</p>
                 {/* Convert subtotal to INR */}
-                <p>₹{subtotal * conversionRate}</p>
+                <p>₹{(subtotal * conversionRate).toFixed(2)}</p>
               </div>
               <hr />
 
@@ -104,7 +104,7 @@ export default function Cart() {
                   <hr />
                   <div className="cart-total-details">
                     <p>Discount ({discount}%)</p>
-                    <p>-₹{discountAmount * conversionRate}</p>
+                    <p>-₹{(discountAmount * conversionRate).toFixed(2)}</p>
                   </div>
                 </>
               )}
@@ -112,9 +112,9 @@ export default function Cart() {
               <div className="cart-total-details">
                 <b>Total</b>
                 {subtotal*conversionRate >= 499 || subtotal*conversionRate === 0 ? (
-                  <b>₹{totalAmount * conversionRate}</b>
+                  <b>₹{(totalAmount * conversionRate).toFixed(2)}</b>
                 ) : (
-                  <b>₹{(totalAmount + deliveryFee) * conversionRate}</b>
+                  <b>₹{((totalAmount + deliveryFee) * conversionRate).toFixed(2)}</b>
                 )}
               </div>
             </div>
