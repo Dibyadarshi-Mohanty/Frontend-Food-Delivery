@@ -17,7 +17,7 @@ const HeroSection = () => {
             </div>
           </Col>
           <Col lg={6} >
-            <img src="./public/Images/3d-4-removebg.png" alt="Delicious Tacos" className="img-fluid rounded hero-pic" style={{height:"500px",width:"500px"}} />
+            <img src="/Images/3d-4-removebg.png" alt="Delicious Tacos" className="img-fluid rounded hero-pic" style={{height:"500px",width:"500px"}} />
           </Col>
         </Row>
       </Container>
