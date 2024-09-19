@@ -33,7 +33,7 @@ export default function Cart() {
       const newDiscount = validPromoCodes[promoCode];
       setIsPromoValid(true);
       setDiscount(newDiscount);
-      setAlertMessage(`You saved ₹${(subtotal * newDiscount) / 100} in this order!!`);
+      setAlertMessage(`You saved ₹${((subtotal*conversionRate) * newDiscount) / 100} in this order!!`);
     } else {
       setIsPromoValid(false);
       setDiscount(0);
@@ -66,9 +66,9 @@ export default function Cart() {
                   <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   {/* Convert item price from USD to INR */}
-                  <p>₹{Math.trunc(item.price * conversionRate)}</p>
+                  <p>₹{item.price * conversionRate}</p>
                   <p>{cartitem[item._id]}</p>
-                  <p>₹{Math.trunc(cartitem[item._id] * item.price * conversionRate)}</p>
+                  <p>₹{cartitem[item._id] * item.price * conversionRate}</p>
                   <p className="cross" onClick={() => removefromcart(item._id)}> X </p>
                 </div>
                 <hr />
@@ -84,11 +84,11 @@ export default function Cart() {
               <div className="cart-total-details">
                 <p>Subtotal</p>
                 {/* Convert subtotal to INR */}
-                <p>₹{Math.trunc(subtotal * conversionRate)}</p>
+                <p>₹{subtotal * conversionRate}</p>
               </div>
               <hr />
 
-              {subtotal >= 499 || subtotal === 0 ? (
+              {subtotal*conversionRate >= 499 || subtotal*conversionRate === 0 ? (
                 <div className="cart-total-details">
                   <p>Delivery Fee</p>
                   <p>FREE</p>
@@ -104,17 +104,17 @@ export default function Cart() {
                   <hr />
                   <div className="cart-total-details">
                     <p>Discount ({discount}%)</p>
-                    <p>-₹{Math.trunc(discountAmount * conversionRate)}</p>
+                    <p>-₹{discountAmount * conversionRate}</p>
                   </div>
                 </>
               )}
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                {subtotal >= 499 || subtotal === 0 ? (
-                  <b>₹{Math.trunc(totalAmount * conversionRate)}</b>
+                {subtotal*conversionRate >= 499 || subtotal*conversionRate === 0 ? (
+                  <b>₹{totalAmount * conversionRate}</b>
                 ) : (
-                  <b>₹{Math.trunc((totalAmount + deliveryFee) * conversionRate)}</b>
+                  <b>₹{(totalAmount + deliveryFee) * conversionRate}</b>
                 )}
               </div>
             </div>
