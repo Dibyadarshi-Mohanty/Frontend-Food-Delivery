@@ -8,7 +8,7 @@ import { useState } from 'react'
 import Cart from './Pages/Cart/Cart'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Verify from './Pages/Verify/verify'
+import Verify from './Pages/Verify/VerifyPayment';
 import Myorders from './Pages/Myorders/Myorders'
 
 

@@ -4,7 +4,8 @@ import { StoreContext } from "../../Context/StoreContext";
 import "./Verify.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-export default function Verify() {
+
+export default function VerifyPayment() {
   const [searchParams, setsearchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
