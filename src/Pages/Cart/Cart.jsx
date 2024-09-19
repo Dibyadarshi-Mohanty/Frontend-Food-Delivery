@@ -7,7 +7,7 @@ export default function Cart() {
   const { cartitem, removefromcart, foodList, getTotalAmount , url} =
     useContext(StoreContext);
   const navigate = useNavigate();
-
+  const conversionRate = 83; // Conversion rate from USD to INR
   // State for promo code and discount
   const [promoCode, setPromoCode] = useState("");
   const [isPromoValid, setIsPromoValid] = useState(false);
@@ -23,7 +23,7 @@ export default function Cart() {
 
   // Total amount before applying the discount
   const subtotal = getTotalAmount();
-  const deliveryFee = 70;
+  const deliveryFee = 0.84;
   const [discountAmount, setDiscountAmount] = useState(0);
   const totalAmount = subtotal - discountAmount;
 
@@ -67,7 +67,7 @@ export default function Cart() {
                 <div className="cart-items-title cart-items-item">
                   <img src={url+"/images/"+item.image} alt="" />
                   <p>{item.name}</p>
-                  <p>&#8377;{item.price}</p>
+                  <p>₹{Math.trunc(price * conversionRate)}</p>
                   <p>{cartitem[item._id]}</p>
                   <p>&#8377;{cartitem[item._id] * item.price}</p>
                   <p className="cross" onClick={() => removefromcart(item._id)}>
@@ -87,11 +87,11 @@ export default function Cart() {
             <div>
               <div className="cart-total-details">
                 <p>Subtotal</p>
-                <p>&#8377;{subtotal}</p>
+                <p>&#8377;{subtotal*conversionRate}</p>
               </div>
               <hr />
 
-              {subtotal >= 899 || subtotal === 0 ? (
+              {subtotal >= 499 || subtotal === 0 ? (
                 <div className="cart-total-details">
                   <p>Delivery Fee</p>
                   <p>FREE</p>
@@ -99,7 +99,7 @@ export default function Cart() {
               ) : (
                 <div className="cart-total-details">
                   <p>Delivery Fee</p>
-                  <p>&#8377;{deliveryFee}</p>
+                  <p>&#8377;{deliveryFee*conversionRate}</p>
                 </div>
               )}
               {isPromoValid && (
@@ -114,10 +114,10 @@ export default function Cart() {
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                {subtotal >= 899 || subtotal === 0 ? (
-                  <b>&#8377;{totalAmount.toFixed(2)}</b>
+                {subtotal >= 499 || subtotal === 0 ? (
+                  <b>&#8377;{totalAmount.toFixed(2)}*conversionRate</b>
                 ) : (
-                  <b>&#8377;{(totalAmount + deliveryFee).toFixed(2)}</b>
+                  <b>&#8377;{(totalAmount + deliveryFee).toFixed(2)}*conversionRate</b>
                 )}
               </div>
             </div>
