@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Playpen+Sans:wght@100..800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+
+}
+body{
+  min-height: 100vh;
+  background-color: white;
+}
+.navbar-h1{
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+li{
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+}
+.navbar{
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+}
+.hero-section{
+  background-image: linear-gradient(to  bottom , #e7c8c1 , white);
+}
+.hero-pic{
+  filter: drop-shadow(0px 0 5px #333) !important;
+}
+.cart-icon {
+  position: relative;
+  border-radius: 55%;
+  background-color: #ffff00;
+}
+
+.dot {
+  position: absolute;
+  top: -0.1px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.nav-profile{
+  position: relative;
+}
+.nav-profile-dropdown{
+  position: absolute;
+  display: none;
+  right: 0;
+  z-index: 1;
+}
+.nav-profile:hover .nav-profile-dropdown{
+display: flex;
+flex-direction: column;
+gap: 10px;
+background-color: #fff4f2;
+padding: 12px 25px;
+border-radius: 4px;
+border: 1px solid tomato;
+outline: 2px solid white ;
+list-style: none;
+}
+.nav-profile img{
+   height: 30px;
+   align-items: center;
+   border-radius: 50%;
+}
+.nav-profile-dropdown li{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+cursor: pointer;
+}
+.nav-profile-dropdown li:hover{
+  color: tomato;
+  transition: 0.3s;
+}
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+.dropdown-menu a:hover{
+  color: tomato;
+  transition: 0.3s;
+  font-weight: 600;
+}
+.buffer{
+  min-height: 60vh;
+  display: grid;
+}
+.buffer .loading{
+  width: 100px;
+  height:100px;
+  place-self: center;
+  border: 5px solid #bdbdbd;
+  border-top-color: tomato;
+  border-radius: 50%;
+  animation: rotate 1s infinite;
+
+
+}
+.buffer-text{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+.buffer-text span {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+@keyframes rotate {
+  100%{
+      transform: rotate(360deg);
+  }
+}

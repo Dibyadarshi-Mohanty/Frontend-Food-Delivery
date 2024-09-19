@@ -1,0 +1,47 @@
+.Header-container {
+    width: 100%;
+    height: 60vh; /* Increase height for better presentation */
+    margin: 30px auto;
+    background: url("./Images/header_img.png") no-repeat center center;
+    background-size: contain; /* Ensures the image covers the container */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+.header-desc {
+    background-color: rgba(223, 210, 210, 0.8); /* Add semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e65c00;
+}

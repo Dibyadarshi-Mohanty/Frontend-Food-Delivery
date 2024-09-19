@@ -1,0 +1,86 @@
+.myorders{
+    margin: 50px opx;
+}
+.heading{
+    font-size:30px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.myorders .container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px ;
+}
+.myorder-order{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    padding: 10px 20px;
+    color: #454545;
+    border: 1px solid orangered;
+    border-radius: 6px;
+}
+.myorder-order img{
+    width: 50px;
+}
+.myorder-order p span{
+    color: orangered;
+}
+.myorder-order p b{
+font-weight: 500;
+color: #454545;
+}
+.myorder-order button{
+    border: none;
+    padding: 12px 0px ;
+    border-radius: 4px;
+    background-color: #ffe1e1;
+    cursor: pointer;
+    color: #454545;
+}
+@media (max-width:900px){
+    .myorder-order{
+        grid-template-columns: 1fr 2fr 1fr;
+        row-gap: 5px;
+        font-size: 12px;
+    }
+    .myorder-order button{
+        font-size: 10px;
+    }
+}
+.container-optional{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container-optional img{
+    height: 300px;
+    width: 300px;
+}
+.container-optional p{
+font-weight: 500;
+font-size: 20px;
+margin-top: 50px;
+}
+.link{
+    text-decoration: none;
+    font-weight: 700;
+font-size: 20px;
+margin-top: 50px;
+color: orangered;
+text-align: center;
+
+}
+
+@media (max-width:500px){
+    .container-optional p{
+        font-weight: 500;
+        font-size: 15px;
+        margin-top: 50px;
+        }
+}

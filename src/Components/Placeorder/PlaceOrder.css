@@ -1,0 +1,79 @@
+/* PlaceOrder.css */
+.place-order {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .place-order-left {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+ 
+  .cart-total{
+    padding-bottom: 5px ;
+  }
+  .place-order-left {
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+  
+  .place-order-right {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  
+  .multi-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .place-order-left,
+    .place-order-right {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .cart-bottom {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .cart-submit-btn {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cart-submit-btn:hover {
+    background-color: #218838;
+  }
+  
