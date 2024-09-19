@@ -8,7 +8,7 @@ import { useState } from 'react'
 import Cart from './Pages/Cart/Cart'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import Verify from './Pages/Verify/verify'
+import Verify from './Pages/Verify/verify'
 import Myorders from './Pages/Myorders/Myorders'
 
 
@@ -31,7 +31,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/auth' element={<Login onLogin={handleLogin} />} />
         <Route path='/order' element={<PlaceOrder />} />
-        {/* <Route path='/verify' element={<Verify/>} /> */}
+        <Route path='/verify' element={<Verify/>} />
         <Route path='/myorders' element={<Myorders/>} />
       </Routes>
       

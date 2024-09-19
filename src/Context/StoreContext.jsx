@@ -9,7 +9,7 @@ export default function StoreContextProvider(props) {
   const [discountAmount, setDiscountAmount] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(0);
   const [promoCode, setPromoCode] = useState("");
-  const url = "http://localhost:3000";
+  const url = "https://backend-food-delivery-vigj.onrender.com";
   const [token, setToken] = useState("");
 
   const [foodList, setfoodList] = useState([]);
