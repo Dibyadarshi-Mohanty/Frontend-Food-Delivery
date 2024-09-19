@@ -4,6 +4,7 @@ import { StoreContext } from "../../Context/StoreContext";
 export default function FoodItem({ id, name, description, price, image }) {
 //   const [itemCount, setitemCount] = useState(0);
   const {cartitem , setcartitem,removefromcart,addtocart,url} = useContext(StoreContext);
+  const conversionRate = 83; // Conversion rate from USD to INR
   return (
     <div className=" food-item ">
       <div className="food-item-img-container">
@@ -38,7 +39,9 @@ export default function FoodItem({ id, name, description, price, image }) {
         <p>{name}</p>
       </div>
       <p className="food-item-description">{description}</p>
-      <h5 className="food-item-price">&#8377;{price}</h5>
+      <h5 className="food-item-price">
+        ${price.toFixed(2)} / ₹{(price * conversionRate).toFixed(2)}
+      </h5>
     </div>
   );
 }
