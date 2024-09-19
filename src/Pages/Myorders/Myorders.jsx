@@ -21,7 +21,7 @@ useEffect(()=>{
       <h1 className='heading'>My Orders</h1>
       {data.length===0?<div className="container-optional"><p>Your cart is hungry! Start adding your favourite dishes now  <a href="/" className='link text-center'>Explore Menu </a> </p>
       
-        <img src="./public/Images/hungry.png" alt="" /> </div>:
+        <img src="/Images/hungry.png" alt="" /> </div>:
       <div className="container">
         {data.map((order,index)=>{
             return(

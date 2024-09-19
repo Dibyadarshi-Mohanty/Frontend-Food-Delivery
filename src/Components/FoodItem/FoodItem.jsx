@@ -11,7 +11,7 @@ export default function FoodItem({ id, name, description, price, image }) {
         {!cartitem[id] ?
          (
           <img
-            src="./public/Images/white-icon.png"
+            src="/Images/white-icon.png"
             alt=""
             className="add"
             onClick={() => addtocart(id)}
@@ -19,14 +19,14 @@ export default function FoodItem({ id, name, description, price, image }) {
         ) : (
           <div className="food-item-counter">
             <img
-              src="./public/Images/remove_icon_red.png"
+              src="/Images/remove_icon_red.png"
               alt=""
               className="counter-btn"
               onClick={() => removefromcart(id)}
             />
             <p>{cartitem[id]}</p>
             <img
-              src="./public/Images/add_icon_green.png"
+              src="/Images/add_icon_green.png"
               alt=""
               className="counter-btn"
               onClick={() => addtocart(id)}
